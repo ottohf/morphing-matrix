@@ -53,6 +53,33 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""f115d8ab-e469-49ea-b7a3-fe67077908c9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SwitchSize"",
+                    ""type"": ""Button"",
+                    ""id"": ""60e56aa9-9307-429e-a417-e0c89ef1be98"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SwitchColor"",
+                    ""type"": ""Button"",
+                    ""id"": ""99c3545e-c391-4823-8217-53222ea64c1c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -273,6 +300,39 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""XR"",
                     ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f9d3ae46-b18f-4529-947f-4c2e16fa5438"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d1b8b7dc-86d9-417b-b506-b846c0fbe68f"",
+                    ""path"": ""<Keyboard>/k"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwitchSize"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""64c5647a-7ba3-4658-97aa-a5b6fc1747a8"",
+                    ""path"": ""<Keyboard>/l"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwitchColor"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -863,6 +923,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
+        m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
+        m_Player_SwitchSize = m_Player.FindAction("SwitchSize", throwIfNotFound: true);
+        m_Player_SwitchColor = m_Player.FindAction("SwitchColor", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -939,6 +1002,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Look;
     private readonly InputAction m_Player_Fire;
+    private readonly InputAction m_Player_Jump;
+    private readonly InputAction m_Player_SwitchSize;
+    private readonly InputAction m_Player_SwitchColor;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -946,6 +1012,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputAction @Fire => m_Wrapper.m_Player_Fire;
+        public InputAction @Jump => m_Wrapper.m_Player_Jump;
+        public InputAction @SwitchSize => m_Wrapper.m_Player_SwitchSize;
+        public InputAction @SwitchColor => m_Wrapper.m_Player_SwitchColor;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -964,6 +1033,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Fire.started += instance.OnFire;
             @Fire.performed += instance.OnFire;
             @Fire.canceled += instance.OnFire;
+            @Jump.started += instance.OnJump;
+            @Jump.performed += instance.OnJump;
+            @Jump.canceled += instance.OnJump;
+            @SwitchSize.started += instance.OnSwitchSize;
+            @SwitchSize.performed += instance.OnSwitchSize;
+            @SwitchSize.canceled += instance.OnSwitchSize;
+            @SwitchColor.started += instance.OnSwitchColor;
+            @SwitchColor.performed += instance.OnSwitchColor;
+            @SwitchColor.canceled += instance.OnSwitchColor;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -977,6 +1055,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Fire.started -= instance.OnFire;
             @Fire.performed -= instance.OnFire;
             @Fire.canceled -= instance.OnFire;
+            @Jump.started -= instance.OnJump;
+            @Jump.performed -= instance.OnJump;
+            @Jump.canceled -= instance.OnJump;
+            @SwitchSize.started -= instance.OnSwitchSize;
+            @SwitchSize.performed -= instance.OnSwitchSize;
+            @SwitchSize.canceled -= instance.OnSwitchSize;
+            @SwitchColor.started -= instance.OnSwitchColor;
+            @SwitchColor.performed -= instance.OnSwitchColor;
+            @SwitchColor.canceled -= instance.OnSwitchColor;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -1162,6 +1249,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
+        void OnSwitchSize(InputAction.CallbackContext context);
+        void OnSwitchColor(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
