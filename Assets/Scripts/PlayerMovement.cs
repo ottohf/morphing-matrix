@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
 
     bool ObjectHasRightTag(Component component)
     {
-        return component.CompareTag(isRed ? "Red" : "Blue");
+        return (component.CompareTag(isRed ? "Red" : "Blue") | component.tag == "Finish"); // Avoid dying when reaching objective
     }
 
     public void OnTriggerEnter2D(Collider2D collider)
