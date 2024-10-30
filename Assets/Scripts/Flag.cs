@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Flag : MonoBehaviour
 {
@@ -8,8 +9,10 @@ public class Flag : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+
             // Player has reached the flag
-            Debug.Log("You Win!");
+            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(currentSceneIndex + 1);
         }
     }
 }
