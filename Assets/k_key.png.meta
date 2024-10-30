@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: a422b5dd9b9e5463ab608e4fcf051aef
+guid: fed5a1768dd73a93d8de0bb8eb8b9bb5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1090800919687445250
-    second: igloo-icon_0
-  - first:
-      213: 2820010926763809962
-    second: igloo-icon_1
+      213: 3194928236131666749
+    second: k_key_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: igloo-icon_0
+      name: k_key_0
       rect:
         serializedVersion: 2
-        x: 170
-        y: 375
-        width: 96
-        height: 121
+        x: 1
+        y: 2
+        width: 797
+        height: 797
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,29 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 20bb3aa38ad432f00800000000000000
-      internalID: 1090800919687445250
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: igloo-icon_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 16
-        width: 512
-        height: 343
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: aac1a703ff0b22720800000000000000
-      internalID: 2820010926763809962
+      spriteID: d3b4e75ad4aa65c20800000000000000
+      internalID: 3194928236131666749
       vertices: []
       indices: 
       edges: []
@@ -154,9 +130,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      igloo-icon_0: 1090800919687445250
-      igloo-icon_1: 2820010926763809962
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
