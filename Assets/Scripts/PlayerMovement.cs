@@ -27,8 +27,9 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        // body.velocityX = movementInput.x * speed * Time.fixedDeltaTime;
-        body.velocityX = speed * Time.fixedDeltaTime;
+        body.velocityX = movementInput.x * speed * Time.fixedDeltaTime;
+        // uncomment this for auto run
+        // body.velocityX = speed * Time.fixedDeltaTime;
 
         if (transform.position.y < -20)
             Die();
