@@ -25,10 +25,10 @@ public class PlayerMovement : MonoBehaviour
         jumpSpeed = smallJumpSpeed;
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        body.velocityX = movementInput.x * speed * Time.deltaTime;
-
+        body.velocityX = movementInput.x * speed * Time.fixedDeltaTime;
+       
         if (transform.position.y < -10)
             Die();
     }
