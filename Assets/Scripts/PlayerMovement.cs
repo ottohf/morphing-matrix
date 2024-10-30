@@ -24,7 +24,11 @@ public class PlayerMovement : MonoBehaviour
         collider = GetComponent<BoxCollider2D>();
         jumpSpeed = smallJumpSpeed;
     }
-
+    private void Start()
+    {
+        SetColor(PlayerColor.Blue);
+        SetSize(PlayerSize.Small);
+    }
     void FixedUpdate()
     {
         body.velocityX = movementInput.x * speed * Time.fixedDeltaTime;

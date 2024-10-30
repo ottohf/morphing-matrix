@@ -14,5 +14,9 @@ public class Flag : MonoBehaviour
             int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
             SceneManager.LoadScene(currentSceneIndex + 1);
         }
+        else
+        {
+            Debug.LogError("Something that wasnt a player entered the objective");
+        }
     }
 }
