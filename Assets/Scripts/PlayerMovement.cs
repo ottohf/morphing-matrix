@@ -80,17 +80,26 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    bool ObjectHasRightTag(Component component)
+    bool ObjectHasRightTag(GameObject component)
     {
+        if (component.CompareTag("Killer"))
+            return false;
+
         if (!component.CompareTag("Red") && !component.CompareTag("Blue"))
             return true;
 
         return component.CompareTag(playerColor == PlayerColor.Red ? "Red" : "Blue");
     }
 
-    public void OnTriggerEnter2D(Collider2D collider)
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        if (!ObjectHasRightTag(collider))
+        if (!ObjectHasRightTag(collider.gameObject))
+            Die();
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (!ObjectHasRightTag(collision.gameObject))
             Die();
     }
 
