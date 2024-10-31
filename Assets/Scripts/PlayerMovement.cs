@@ -28,12 +28,13 @@ public class PlayerMovement : MonoBehaviour
     {
         SetColor(PlayerColor.Blue);
         SetSize(PlayerSize.Small);
+        //spriteRenderer.transform.position = new Vector2(spriteRenderer.transform.position.x, spriteRenderer.transform.position.y + 0.24f); // this "evens out" the misplacement from subracting .24 the first time a size is set
     }
     void FixedUpdate()
     {
         body.velocityX = movementInput.x * speed * Time.fixedDeltaTime;
         // uncomment this for auto run
-        // body.velocityX = speed * Time.fixedDeltaTime;
+        body.velocityX = speed * Time.fixedDeltaTime;
 
         if (transform.position.y < -20)
             Die();
@@ -55,11 +56,12 @@ public class PlayerMovement : MonoBehaviour
         transform.position = new Vector3(0, 0, 0);
         SetColor(PlayerColor.Blue);
         SetSize(PlayerSize.Small);
+        //spriteRenderer.transform.position = new Vector2(spriteRenderer.transform.position.x, spriteRenderer.transform.position.y + 0.24f); // this "evens out" the misplacement from subracting .24 the first time a size is set
     }
 
-    bool IsOnGround()
+    public bool IsOnGround()
     {
-        return Physics2D.OverlapBox(transform.position, spriteRenderer.transform.localScale, 0, groundLayer);
+        return Physics2D.OverlapBox(transform.position, collider.size, 0, groundLayer);
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -105,9 +107,18 @@ public class PlayerMovement : MonoBehaviour
 
     void SetSize(PlayerSize size)
     {
+        if (playerSize == PlayerSize.Small && size == PlayerSize.Big) // yes, this IS stupid -robin
+        {
+            spriteRenderer.transform.position = new Vector2(spriteRenderer.transform.position.x, spriteRenderer.transform.position.y + 0.17f);
+        }
+        if (playerSize == PlayerSize.Big && size == PlayerSize.Small)
+        {
+            spriteRenderer.transform.position = new Vector2(spriteRenderer.transform.position.x, spriteRenderer.transform.position.y - 0.17f);
+        }
         playerSize = size;
         float newSize = playerSize == PlayerSize.Small ? 1.0f : 1.4f;
-        collider.size = spriteRenderer.transform.localScale = new Vector3(newSize, newSize, 1);
+        collider.size = new Vector3(newSize * 0.9f, newSize * 1.2f, 1);
+        spriteRenderer.transform.localScale = new Vector3(newSize * 0.4635f, newSize * 0.4635f, 1);
         jumpSpeed = playerSize == PlayerSize.Small ? smallJumpSpeed : bigJumpSpeed;
     }
 
