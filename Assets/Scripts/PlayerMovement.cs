@@ -23,6 +23,9 @@ public class PlayerMovement : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         collider = GetComponent<BoxCollider2D>();
         jumpSpeed = smallJumpSpeed;
+
+        //collider.transform.position = new Vector2(collider.transform.position.x - 6f, collider.transform.position.y);
+        //spriteRenderer.transform.position = new Vector2(spriteRenderer.transform.position.x - 6f, spriteRenderer.transform.position.y);
     }
     private void Start()
     {
