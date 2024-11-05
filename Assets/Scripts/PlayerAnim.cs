@@ -19,6 +19,7 @@ public class PlayerAnim : MonoBehaviour
         animator = GetComponent<Animator>();
         collider = transform.parent.GetComponent<BoxCollider2D>();
         isGrounded = false;
+        Application.targetFrameRate = 60;
     }
 
     // Update is called once per frame
