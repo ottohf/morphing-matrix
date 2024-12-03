@@ -20,5 +20,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WinScreen.unity
     guid: 350ab5c61ba28423ab8c53c2918c08ec
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 1b2be09323ced627582df0d3c153202f
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
