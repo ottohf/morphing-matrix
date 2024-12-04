@@ -8,6 +8,7 @@ TagManager:
   - Blue
   - Killer
   - Coin
+  - SpeedUp
   layers:
   - Default
   - TransparentFX

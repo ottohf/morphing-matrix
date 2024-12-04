@@ -62,6 +62,12 @@ public class PlayerMovement : MonoBehaviour
         body.velocityX = 0;
         body.velocityY = 0;
         //spriteRenderer.transform.position = new Vector2(spriteRenderer.transform.position.x, spriteRenderer.transform.position.y + 0.24f); // this "evens out" the misplacement from subracting .24 the first time a size is set
+
+        foreach (var obj in GameObject.FindGameObjectsWithTag("SpeedUp"))
+        {
+            var speedUp = obj.GetComponent<SpeedUpItem>();
+            speedUp.ResetSpeedUp();
+        }
     }
 
     public bool IsOnGround()
