@@ -8,9 +8,6 @@ public class PlayerMovement : MonoBehaviour
     public float bigJumpSpeed;
     public SpriteRenderer spriteRenderer;
 
-    public GameObject canvasPrefab;
-    public GameObject canvasX;
-
     public LayerMask groundLayer;
 
     float jumpSpeed;
@@ -26,8 +23,6 @@ public class PlayerMovement : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         collider = GetComponent<BoxCollider2D>();
         jumpSpeed = smallJumpSpeed;
-
-        canvasX = Instantiate(canvasPrefab);
 
         //collider.transform.position = new Vector2(collider.transform.position.x - 6f, collider.transform.position.y);
         //spriteRenderer.transform.position = new Vector2(spriteRenderer.transform.position.x - 6f, spriteRenderer.transform.position.y);
@@ -64,8 +59,6 @@ public class PlayerMovement : MonoBehaviour
         transform.position = new Vector3(0, 0, 0);
         SetColor(PlayerColor.Blue);
         SetSize(PlayerSize.Small);
-        Destroy(canvasX);
-        canvasX = Instantiate(canvasPrefab);
         //spriteRenderer.transform.position = new Vector2(spriteRenderer.transform.position.x, spriteRenderer.transform.position.y + 0.24f); // this "evens out" the misplacement from subracting .24 the first time a size is set
     }
 
@@ -84,22 +77,12 @@ public class PlayerMovement : MonoBehaviour
         if (IsOnGround() && context.started)
             body.velocityY = jumpSpeed;
     }
-    public void OnFuckingNormalJump()
-    {
-        if (IsOnGround())
-            body.velocityY = jumpSpeed;
-    }
     public void OnSwitchSize(InputAction.CallbackContext context)
     {
         if (context.started)
         {
             SetSize(playerSize == PlayerSize.Small ? PlayerSize.Big : PlayerSize.Small);
         }
-    }
-
-    public void OnSwitchFuckingNormalSize()
-    {
-        SetSize(playerSize == PlayerSize.Small ? PlayerSize.Big : PlayerSize.Small);
     }
 
     bool ObjectHasRightTag(GameObject component)
@@ -167,10 +150,5 @@ public class PlayerMovement : MonoBehaviour
         {
             SetColor(playerColor == PlayerColor.Red ? PlayerColor.Blue : PlayerColor.Red);
         }
-    }
-
-    public void OnSwitchFuckingNormalColor()
-    {
-       SetColor(playerColor == PlayerColor.Red ? PlayerColor.Blue : PlayerColor.Red);
     }
 }
