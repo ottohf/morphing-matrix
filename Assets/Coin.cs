@@ -24,9 +24,8 @@ public class Coin : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider)
     {
         if (ObjectIsCoin(collider.gameObject)) {
-            print("Before collecting coin, user had " + coinSO.Value + "coins");
             coinSO.Value += 1;
-            print("got a coin, now have "+coinSO.Value);
+            collider.gameObject.SetActive(false);
         }
     }
 
