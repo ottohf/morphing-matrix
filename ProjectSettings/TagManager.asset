@@ -7,6 +7,7 @@ TagManager:
   - Red
   - Blue
   - Killer
+  - Coin
   layers:
   - Default
   - TransparentFX
