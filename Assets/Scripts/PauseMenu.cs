@@ -13,7 +13,7 @@ public class PauseMenu : MonoBehaviour
 
     void Start()
     {
-        ResumeGame();
+        pauseUI.SetActive(false);
     }
 
     void Update()
@@ -26,12 +26,15 @@ public class PauseMenu : MonoBehaviour
 
     public void GotoMainMenu()
     {
+        SoundManager.instance.PlayButtonSound();
         SceneManager.LoadScene("MainMenu");
     }
 
+    float oldTimeScale = 0;
     public void PauseGame()
     {
-        print("Pause");
+        SoundManager.instance.PlayButtonSound();
+        oldTimeScale = Time.timeScale;
         Time.timeScale = 0.0f;
         pauseButton.gameObject.SetActive(false);
         pauseUI.SetActive(true);
@@ -40,8 +43,8 @@ public class PauseMenu : MonoBehaviour
 
     public void ResumeGame()
     {
-        print("Resume");
-        Time.timeScale = 1.0f;
+        SoundManager.instance.PlayButtonSound();
+        Time.timeScale = oldTimeScale;
         pauseButton.gameObject.SetActive(true);
         pauseUI.SetActive(false);
         inPause = false;
@@ -49,7 +52,6 @@ public class PauseMenu : MonoBehaviour
 
     public void TogglePause()
     {
-        print("Toggle");
         if (inPause)
             ResumeGame();
         else

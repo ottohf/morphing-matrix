@@ -70,6 +70,7 @@ public class Shop : MonoBehaviour
             }
             newItem.button.onClick.AddListener(new UnityEngine.Events.UnityAction(() =>
             {
+                SoundManager.instance.PlayButtonSound();
                 if (item.owned)
                 {
                     if (item.equipped)
@@ -116,6 +117,7 @@ public class Shop : MonoBehaviour
 
     public void OnGotoMainMenu()
     {
+        SoundManager.instance.PlayButtonSound();
         SceneManager.LoadScene("MainMenu");
     }
 }
