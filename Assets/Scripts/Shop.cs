@@ -20,7 +20,7 @@ public class Shop : MonoBehaviour
         public string name;
         public int price;
         public bool owned;
-        public bool equiped;
+        public bool equipped;
         public Sprite image;
     }
 
@@ -56,7 +56,7 @@ public class Shop : MonoBehaviour
             newItem.image.sprite = item.image;
             if (item.owned)
             {
-                newItem.buttonText.text = item.equiped ? "Un-equip" : "Equip";
+                newItem.buttonText.text = item.equipped ? "Un-equip" : "Equip";
             }
             else
             {
@@ -66,21 +66,21 @@ public class Shop : MonoBehaviour
             {
                 if (item.owned)
                 {
-                    if (item.equiped)
+                    if (item.equipped)
                     {
-                        item.equiped = false;
+                        item.equipped = false;
                         newItem.buttonText.text = "Equip";
                     }
                     else
                     {
-                        item.equiped = true;
+                        item.equipped = true;
                         newItem.buttonText.text = "Un-equip";
                     }
                 }
                 else
                 {
                     BuyItem(item.name);
-                    item.equiped = false;
+                    item.equipped = false;
                     newItem.buttonText.text = "Equip";
                 }
             }));
