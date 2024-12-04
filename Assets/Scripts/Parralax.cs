@@ -13,7 +13,7 @@ public class Parralax : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = transform.parent.parent.parent.GetComponent<Rigidbody2D>();
+        rb = transform.parent?.parent?.parent?.GetComponent<Rigidbody2D>(); // workaround for menu
         pxStart = SpriteRenderer.transform.position.x;
         pyStart = SpriteRenderer.transform.position.y;
     }
@@ -21,6 +21,9 @@ public class Parralax : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        SpriteRenderer.transform.position = new Vector2(pxStart + rb.transform.position.x * (1f - pEffect * 2f), pyStart + rb.transform.position.y * (1f - pEffect * 0.5f));
+       if (rb != null)// workaround for menu
+        { 
+            SpriteRenderer.transform.position = new Vector2(pxStart + rb.transform.position.x * (1f - pEffect * 2f), pyStart + rb.transform.position.y * (1f - pEffect * 0.5f));
+       }  
     }
 }
