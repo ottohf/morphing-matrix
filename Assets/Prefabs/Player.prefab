@@ -1873,6 +1873,8 @@ MonoBehaviour:
   smallJumpSpeed: 20
   bigJumpSpeed: 26
   spriteRenderer: {fileID: 397931496580884548}
+  canvasPrefab: {fileID: 8279909302408539652, guid: 7dee503ac4659cd49ab08a95a181954f, type: 3}
+  canvasX: {fileID: 0}
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
