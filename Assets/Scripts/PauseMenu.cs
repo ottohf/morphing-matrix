@@ -30,9 +30,11 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+    float oldTimeScale = 0;
     public void PauseGame()
     {
         SoundManager.instance.PlayButtonSound();
+        oldTimeScale = Time.timeScale;
         Time.timeScale = 0.0f;
         pauseButton.gameObject.SetActive(false);
         pauseUI.SetActive(true);
@@ -42,7 +44,7 @@ public class PauseMenu : MonoBehaviour
     public void ResumeGame()
     {
         SoundManager.instance.PlayButtonSound();
-        Time.timeScale = 1.0f;
+        Time.timeScale = oldTimeScale;
         pauseButton.gameObject.SetActive(true);
         pauseUI.SetActive(false);
         inPause = false;
