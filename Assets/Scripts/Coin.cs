@@ -16,7 +16,7 @@ public class Coin : MonoBehaviour
         else
         {
             return false;
-        } 
+        }
         
 
     }

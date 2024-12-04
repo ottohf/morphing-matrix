@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,7 +9,6 @@ using UnityEngine.UIElements;
 
 public class Shop : MonoBehaviour
 {
-    public int coinCount = 100;
 
     public TextMeshProUGUI coinCountText;
     public GameObject shopItemPrefab;
@@ -25,6 +25,8 @@ public class Shop : MonoBehaviour
     }
 
     public List<ItemInfo> items;
+    [SerializeField]
+    private FloatSO coinSO;
 
 
     // TODO: replace these:
@@ -62,6 +64,10 @@ public class Shop : MonoBehaviour
             {
                 newItem.buttonText.text = "Buy";
             }
+            if (coinSO.Value < item.price)
+            {
+                newItem.button.enabled = false;
+            }
             newItem.button.onClick.AddListener(new UnityEngine.Events.UnityAction(() =>
             {
                 if (item.owned)
@@ -79,9 +85,11 @@ public class Shop : MonoBehaviour
                 }
                 else
                 {
-                    BuyItem(item.name);
-                    item.equipped = false;
-                    newItem.buttonText.text = "Equip";
+                    if (BuyItem(item.name)) {
+                        item.equipped = false;
+                        newItem.buttonText.text = "Equip";
+                    };
+                    
                 }
             }));
         }
@@ -90,14 +98,20 @@ public class Shop : MonoBehaviour
 
     void Update()
     {
-        coinCountText.text = $"x{coinCount}";
+        coinCountText.text = $"x{coinSO.Value}";
     }
 
-    public void BuyItem(string name)
+    public bool BuyItem(string name)
     {
         int price = GetItemPrice(name);
-        coinCount -= price;
-        SetItemOwned(name);
+        if (coinSO.Value > price)
+        {
+            coinSO.Value -= price;
+            SetItemOwned(name);
+            return true;
+        }
+        else { return false; }
+
     }
 
     public void OnGotoMainMenu()

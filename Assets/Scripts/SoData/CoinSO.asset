@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe7dfc5b1b3654fb98ee3c278b3912b1, type: 3}
   m_Name: CoinSO
   m_EditorClassIdentifier: 
-  _value: 0
+  _value: 1

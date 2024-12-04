@@ -1685,7 +1685,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1502097621}
   m_Direction: 0
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.99999654
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1846,6 +1846,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1618378019}
   - component: {fileID: 1618378018}
+  - component: {fileID: 1618378020}
   m_Layer: 0
   m_Name: Shop
   m_TagString: Untagged
@@ -1865,21 +1866,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a03023c82bc37fa68728bc6f4063fab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinCount: 100
   coinCountText: {fileID: 208546377}
   shopItemPrefab: {fileID: 1678162479740160913, guid: b6979e5c8ae7066c0b07235c4c52770d, type: 3}
   itemsContent: {fileID: 1821820120}
   items:
-  - name: Wizard hat
+  - name: Bowtie
     price: 10
     owned: 0
     equipped: 0
-    image: {fileID: 1090800919687445250, guid: a422b5dd9b9e5463ab608e4fcf051aef, type: 3}
-  - name: Cowboy hat
+    image: {fileID: 5007395434484744977, guid: 955705418de0b45fcad6ac0ab81b98a0, type: 3}
+  - name: Wizard hat
     price: 20
     owned: 0
     equipped: 0
-    image: {fileID: 1090800919687445250, guid: a422b5dd9b9e5463ab608e4fcf051aef, type: 3}
+    image: {fileID: -6686181429603806153, guid: 0ed0ee1ebde27407ea5e701fcb5c5e8d, type: 3}
+  coinSO: {fileID: 11400000, guid: 2265e0ebf7d0b4444a0b1da134c54afb, type: 2}
 --- !u!4 &1618378019
 Transform:
   m_ObjectHideFlags: 0
@@ -1895,6 +1896,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1618378020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618378017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56d81c3f956e54690be7180ed2e39610, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinSO: {fileID: 11400000, guid: 2265e0ebf7d0b4444a0b1da134c54afb, type: 2}
 --- !u!1 &1733071135
 GameObject:
   m_ObjectHideFlags: 0
@@ -2472,7 +2486,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00035247524, y: 0}
+  m_AnchoredPosition: {x: 0.00002011429, y: 0}
   m_SizeDelta: {x: -352.63318, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1885684865
@@ -3067,6 +3081,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coint Count
       objectReference: {fileID: 0}
+    - target: {fileID: 4740846558492868767, guid: 4e1eb9bd2cceae5ca951858d5d1f5199, type: 3}
+      propertyPath: coinText
+      value: 
+      objectReference: {fileID: 208546377}
     - target: {fileID: 6277084126437703261, guid: 4e1eb9bd2cceae5ca951858d5d1f5199, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
