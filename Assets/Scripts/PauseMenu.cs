@@ -26,8 +26,10 @@ public class PauseMenu : MonoBehaviour
 
     public void GotoMainMenu()
     {
+        Time.timeScale = 1.0f;
         SoundManager.instance.PlayButtonSound();
         SceneManager.LoadScene("MainMenu");
+
     }
 
     float oldTimeScale = 0;
