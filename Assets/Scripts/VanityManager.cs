@@ -17,13 +17,13 @@ public class VanityManager : MonoBehaviour
     public SpriteRenderer spriteRendererPlayer;
     void Start()
     {
-        hasBowtie = false;
+        hasBowtie = true;
         bowtie = GameObject.Find("BowtieAnim");
         hat = GameObject.Find("HatAnim");
         player = GameObject.Find("PlayerSprite");
         bowtie.transform.position = new Vector2(-100, -100);
         spriteRendererBowtie = bowtie.GetComponent<SpriteRenderer>();
-        spriteRendererHat = hat.GetComponent<SpriteRenderer>();
+        //spriteRendererHat = hat.GetComponent<SpriteRenderer>();
         spriteRendererPlayer = player.GetComponent<SpriteRenderer>();
     }
 
