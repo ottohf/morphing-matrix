@@ -65,6 +65,8 @@ public class PlayerMovement : MonoBehaviour
         transform.position = new Vector3(0, 0, 0);
         SetColor(PlayerColor.Blue);
         SetSize(PlayerSize.Small);
+        body.velocityX = 0;
+        body.velocityY = 0;
 
         if (sbs.spriteIndex == 1)
         {
@@ -78,6 +80,12 @@ public class PlayerMovement : MonoBehaviour
         //Destroy(canvasX);
         //canvasX = Instantiate(canvasPrefab);
         //spriteRenderer.transform.position = new Vector2(spriteRenderer.transform.position.x, spriteRenderer.transform.position.y + 0.24f); // this "evens out" the misplacement from subracting .24 the first time a size is set
+
+        foreach (var obj in GameObject.FindGameObjectsWithTag("SpeedUp"))
+        {
+            var speedUp = obj.GetComponent<SpeedUpItem>();
+            speedUp.ResetSpeedUp();
+        }
     }
 
     public bool IsOnGround()
