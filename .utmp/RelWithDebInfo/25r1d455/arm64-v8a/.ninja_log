@@ -1,0 +1,11 @@
+# ninja log v5
+455	4181	7532643088502938	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	f8f62af4ae8d16d8
+4236	8673	7532643130752022	C:/Users/robin/morphing-matrix_real/morphing-matrix/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/25r1d455/obj/arm64-v8a/libswappywrapper.so	3c4b09f9dc5068c3
+119	9697	7532643144694488	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	28a0009b0c1f486a
+48	9869	7532643146897502	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	ee2c2a07e5dc9517
+72	10096	7532643149015907	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	9b37fd677e163d66
+335	10377	7532643152019570	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	46bdf0893d69f449
+2	10494	7532643153395046	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	4cb747d93da12289
+170	11114	7532643159516009	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	b5e8dac75debe1a1
+25	11404	7532643162600063	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	3fdb11fc36795dca
+11404	11843	7532643165592682	C:/Users/robin/morphing-matrix_real/morphing-matrix/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/25r1d455/obj/arm64-v8a/libgame.so	73a32659860217d

@@ -15,6 +15,9 @@ public class PlayerMovement : MonoBehaviour
     PlayerSize playerSize = PlayerSize.Small;
     Vector2 movementInput;
 
+    ButtonScript sbs; // size button script
+    ButtonScript cbs; // color button script
+
     Rigidbody2D body;
     BoxCollider2D collider;
 
@@ -31,6 +34,9 @@ public class PlayerMovement : MonoBehaviour
     {
         SetColor(PlayerColor.Blue);
         SetSize(PlayerSize.Small);
+        sbs = GameObject.Find("SizeButton").GetComponent<ButtonScript>();
+        cbs = GameObject.Find("ColorButton").GetComponent<ButtonScript>();
+
         //spriteRenderer.transform.position = new Vector2(spriteRenderer.transform.position.x, spriteRenderer.transform.position.y + 0.24f); // this "evens out" the misplacement from subracting .24 the first time a size is set
     }
     void FixedUpdate()
@@ -61,6 +67,18 @@ public class PlayerMovement : MonoBehaviour
         SetSize(PlayerSize.Small);
         body.velocityX = 0;
         body.velocityY = 0;
+
+        if (sbs.spriteIndex == 1)
+        {
+            sbs.SwitchSprite();
+        }
+        if (cbs.spriteIndex == 1)
+        {
+            cbs.SwitchSprite();
+        }
+
+        //Destroy(canvasX);
+        //canvasX = Instantiate(canvasPrefab);
         //spriteRenderer.transform.position = new Vector2(spriteRenderer.transform.position.x, spriteRenderer.transform.position.y + 0.24f); // this "evens out" the misplacement from subracting .24 the first time a size is set
 
         foreach (var obj in GameObject.FindGameObjectsWithTag("SpeedUp"))
@@ -85,12 +103,22 @@ public class PlayerMovement : MonoBehaviour
         if (IsOnGround() && context.started)
             body.velocityY = jumpSpeed;
     }
+
+    public void OnTouchJump()
+    {
+        if (IsOnGround())
+            body.velocityY = jumpSpeed;
+    }
     public void OnSwitchSize(InputAction.CallbackContext context)
     {
         if (context.started)
         {
             SetSize(playerSize == PlayerSize.Small ? PlayerSize.Big : PlayerSize.Small);
         }
+    }
+    public void OnTouchSwitchSize()
+    {
+        SetSize(playerSize == PlayerSize.Small ? PlayerSize.Big : PlayerSize.Small);
     }
 
     bool ObjectHasRightTag(GameObject component)
@@ -158,5 +186,9 @@ public class PlayerMovement : MonoBehaviour
         {
             SetColor(playerColor == PlayerColor.Red ? PlayerColor.Blue : PlayerColor.Red);
         }
+    }
+    public void OnTouchSwitchColor()
+    {
+        SetColor(playerColor == PlayerColor.Red ? PlayerColor.Blue : PlayerColor.Red);
     }
 }

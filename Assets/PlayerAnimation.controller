@@ -357,9 +357,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 2.7885214e-10
-  m_TransitionOffset: 0.049122974
-  m_ExitTime: 6.174513e-10
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0.99267113
+  m_ExitTime: 0.0000000014448422
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -373,7 +373,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: PenguinDown
-  m_Speed: 10
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -6843696564448615760}
@@ -431,7 +431,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: PenguinUp
-  m_Speed: 0.1
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 8992686125489248587}
@@ -470,8 +470,8 @@ AnimatorStateTransition:
   m_IsExit: 0
   serializedVersion: 3
   m_TransitionDuration: 0
-  m_TransitionOffset: 0
-  m_ExitTime: 0.000000019549775
+  m_TransitionOffset: 0.99368906
+  m_ExitTime: 0.000000020463128
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
