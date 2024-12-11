@@ -159,6 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite1: {fileID: 8822511800907135337, guid: 89676edf436179a469e4ff3b4e38428f, type: 3}
   sprite2: {fileID: -2304142078643210220, guid: 1b552b517087896438ca56e5d2f94313, type: 3}
+  spriteIndex: 0
 --- !u!1 &3454603494734082223
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,6 +172,7 @@ GameObject:
   - component: {fileID: 5041169270145868644}
   - component: {fileID: 8868934812469011842}
   - component: {fileID: 213028362114802899}
+  - component: {fileID: 134440580472624845}
   m_Layer: 5
   m_Name: JumpButton
   m_TagString: Untagged
@@ -286,6 +288,33 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &134440580472624845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3454603494734082223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bc89dd142f469c9e942e61b909c58a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onButtonDown:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -450,6 +479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite1: {fileID: 7035118996452999529, guid: a89d6f295b1eaac4e8b22b5f65759500, type: 3}
   sprite2: {fileID: 42382679235748056, guid: d00adffc729538f4d82d3106fbd050aa, type: 3}
+  spriteIndex: 0
 --- !u!1 &8879630746167556820
 GameObject:
   m_ObjectHideFlags: 0
