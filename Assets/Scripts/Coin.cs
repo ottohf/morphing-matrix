@@ -24,7 +24,8 @@ public class Coin : MonoBehaviour
     {
         if (ObjectIsCoin(collider.gameObject)) {
             coinSO.Value += 1;
-            collider.gameObject.SetActive(false);
+            collider.gameObject.GetComponent<coinAnim>().setDead();
+            Destroy(collider.gameObject, 0.333f);
         }
     }
 
