@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 3.unity
     guid: 72f43d63a015740298ebd24e7f189a94
   - enabled: 1
+    path: Assets/Scenes/WinCutscene.unity
+    guid: 777af15e557aa43d0a3d111c663c9d64
+  - enabled: 0
     path: Assets/Scenes/WinScreen.unity
     guid: 350ab5c61ba28423ab8c53c2918c08ec
   - enabled: 1
