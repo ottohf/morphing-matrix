@@ -2090,6 +2090,61 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a45b9b3086f0d43cea0e1a7e0874a91f, type: 3}
+--- !u!1 &1084687774 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 551269828117208588, guid: bf3f286fa9e412f40b6a0799e5af51d8, type: 3}
+  m_PrefabInstance: {fileID: 1949765959}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1084687776 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2379719279291577253, guid: bf3f286fa9e412f40b6a0799e5af51d8, type: 3}
+  m_PrefabInstance: {fileID: 1949765959}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084687774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0173597747f5584408baf03efcd02a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1084687780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084687774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bc89dd142f469c9e942e61b909c58a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onButtonDown:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 112993506}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: OnTouchSwitchSize
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1084687776}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: SwitchSprite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1097606002
 GameObject:
   m_ObjectHideFlags: 0
@@ -2447,6 +2502,56 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1642008395 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8583012705962570002, guid: bf3f286fa9e412f40b6a0799e5af51d8, type: 3}
+  m_PrefabInstance: {fileID: 1949765959}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642008386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0173597747f5584408baf03efcd02a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1642008399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642008386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bc89dd142f469c9e942e61b909c58a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onButtonDown:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 112993506}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: OnTouchSwitchColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1642008395}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: SwitchSprite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1661811577
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2857,6 +2962,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 134440580472624845, guid: bf3f286fa9e412f40b6a0799e5af51d8, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 134440580472624845, guid: bf3f286fa9e412f40b6a0799e5af51d8, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 112993506}
+    - target: {fileID: 134440580472624845, guid: bf3f286fa9e412f40b6a0799e5af51d8, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnTouchJump
+      objectReference: {fileID: 0}
+    - target: {fileID: 134440580472624845, guid: bf3f286fa9e412f40b6a0799e5af51d8, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerMovement, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 134440580472624845, guid: bf3f286fa9e412f40b6a0799e5af51d8, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 186214027961928147, guid: bf3f286fa9e412f40b6a0799e5af51d8, type: 3}
       propertyPath: m_UiScaleMode
       value: 1
@@ -2884,6 +3009,10 @@ PrefabInstance:
     - target: {fileID: 213028362114802899, guid: bf3f286fa9e412f40b6a0799e5af51d8, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.a
       value: 0.627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 213028362114802899, guid: bf3f286fa9e412f40b6a0799e5af51d8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 213028362114802899, guid: bf3f286fa9e412f40b6a0799e5af51d8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2950,12 +3079,20 @@ PrefabInstance:
       value: 0.627451
       objectReference: {fileID: 0}
     - target: {fileID: 3952124328621426579, guid: bf3f286fa9e412f40b6a0799e5af51d8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3952124328621426579, guid: bf3f286fa9e412f40b6a0799e5af51d8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 112993506}
+      objectReference: {fileID: 1084687776}
     - target: {fileID: 3952124328621426579, guid: bf3f286fa9e412f40b6a0799e5af51d8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnTouchSwitchSize
+      value: SwitchSprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 3952124328621426579, guid: bf3f286fa9e412f40b6a0799e5af51d8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ButtonScript, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4229843431609324134, guid: bf3f286fa9e412f40b6a0799e5af51d8, type: 3}
       propertyPath: m_SizeDelta.x
@@ -2990,12 +3127,20 @@ PrefabInstance:
       value: 0.627451
       objectReference: {fileID: 0}
     - target: {fileID: 5742284503068938573, guid: bf3f286fa9e412f40b6a0799e5af51d8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5742284503068938573, guid: bf3f286fa9e412f40b6a0799e5af51d8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 112993506}
+      objectReference: {fileID: 1642008395}
     - target: {fileID: 5742284503068938573, guid: bf3f286fa9e412f40b6a0799e5af51d8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnTouchSwitchColor
+      value: SwitchSprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 5742284503068938573, guid: bf3f286fa9e412f40b6a0799e5af51d8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ButtonScript, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8781601132713514773, guid: bf3f286fa9e412f40b6a0799e5af51d8, type: 3}
       propertyPath: m_Pivot.x
@@ -3103,12 +3248,18 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 937378178}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 551269828117208588, guid: bf3f286fa9e412f40b6a0799e5af51d8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1084687780}
     - targetCorrespondingSourceObject: {fileID: 4020989567488087302, guid: bf3f286fa9e412f40b6a0799e5af51d8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1642008393}
     - targetCorrespondingSourceObject: {fileID: 4020989567488087302, guid: bf3f286fa9e412f40b6a0799e5af51d8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1642008392}
+    - targetCorrespondingSourceObject: {fileID: 4020989567488087302, guid: bf3f286fa9e412f40b6a0799e5af51d8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1642008399}
   m_SourcePrefab: {fileID: 100100000, guid: bf3f286fa9e412f40b6a0799e5af51d8, type: 3}
 --- !u!224 &1949765960 stripped
 RectTransform:
