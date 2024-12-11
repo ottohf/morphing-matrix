@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: penguin_bowtie_down
+  m_Name: hat_up
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,9 +21,9 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 21300000, guid: dc4da25222de0d543b212bb8a8e97e46, type: 3}
+      value: {fileID: 21300000, guid: 330ad15f8f3af274e93712a89d1bf6cf, type: 3}
     - time: 0.083333336
-      value: {fileID: 21300000, guid: afc7443b221ce764890ea33e3d5250cb, type: 3}
+      value: {fileID: 21300000, guid: 74a9391d1ff8f6340aee77b9535b4e9a, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -46,8 +46,8 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 21300000, guid: dc4da25222de0d543b212bb8a8e97e46, type: 3}
-    - {fileID: 21300000, guid: afc7443b221ce764890ea33e3d5250cb, type: 3}
+    - {fileID: 21300000, guid: 330ad15f8f3af274e93712a89d1bf6cf, type: 3}
+    - {fileID: 21300000, guid: 74a9391d1ff8f6340aee77b9535b4e9a, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

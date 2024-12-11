@@ -25,7 +25,7 @@ RectTransform:
   m_GameObject: {fileID: 2828518699650669180}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.56258786, y: 0.56258786, z: 0.56258786}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4627360245257653485}
@@ -190,7 +190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinSO: {fileID: 11400000, guid: 2265e0ebf7d0b4444a0b1da134c54afb, type: 2}
   coins: 0
-  coinText: {fileID: 0}
+  coinText: {fileID: 8545659560376456094}
 --- !u!1 &5564522706783661450
 GameObject:
   m_ObjectHideFlags: 0

@@ -31,6 +31,7 @@ public class VanityManager : MonoBehaviour
         hat = GameObject.Find("HatAnim");
         player = GameObject.Find("PlayerSprite");
         bowtie.transform.position = new Vector2(-100, -100);
+        hat.transform.position = new Vector2(-100, -100);
         spriteRendererBowtie = bowtie.GetComponent<SpriteRenderer>();
         spriteRendererHat = hat.GetComponent<SpriteRenderer>();
         spriteRendererPlayer = player.GetComponent<SpriteRenderer>();
