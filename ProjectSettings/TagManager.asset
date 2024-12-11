@@ -9,6 +9,7 @@ TagManager:
   - Killer
   - Coin
   - SpeedUp
+  - PreVanityManager
   layers:
   - Default
   - TransparentFX

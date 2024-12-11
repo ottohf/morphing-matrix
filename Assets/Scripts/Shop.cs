@@ -47,6 +47,12 @@ public class Shop : MonoBehaviour
 
     void Start()
     {
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("PreVanityManager");
+
+        if (objs.Length > 0)
+        {
+            items = objs[0].GetComponent<PreVanityManager>().itemsFromShop;
+        }
         foreach (var item in items)
         {
             // var newObj = Instantiate(shopItemPrefab);
