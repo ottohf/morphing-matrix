@@ -9,10 +9,16 @@ public class Flag : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-
             // Player has reached the flag
-            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            SceneManager.LoadScene(currentSceneIndex + 1);
+            if (SceneManager.GetActiveScene().name == "Tutorial")
+            {
+                SceneManager.LoadScene("MainMenu");
+            }
+            else
+            {
+                int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+                SceneManager.LoadScene(currentSceneIndex + 1);
+            }
         }
         else
         {
