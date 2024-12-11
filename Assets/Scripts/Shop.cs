@@ -24,6 +24,8 @@ public class Shop : MonoBehaviour
         public Sprite image;
     }
 
+    public static List<ItemInfo> actualItems;
+
     public List<ItemInfo> items;
     [SerializeField]
     private FloatSO coinSO;
@@ -47,6 +49,11 @@ public class Shop : MonoBehaviour
 
     void Start()
     {
+        if (actualItems != null)
+            items = actualItems;
+        else
+            actualItems = items;
+
         foreach (var item in items)
         {
             // var newObj = Instantiate(shopItemPrefab);
@@ -64,7 +71,7 @@ public class Shop : MonoBehaviour
             {
                 newItem.buttonText.text = "Buy";
             }
-            if (coinSO.Value < item.price)
+            if (coinSO.Value < item.price && !item.owned)
             {
                 newItem.button.enabled = false;
             }
@@ -86,11 +93,12 @@ public class Shop : MonoBehaviour
                 }
                 else
                 {
-                    if (BuyItem(item.name)) {
+                    if (BuyItem(item.name))
+                    {
                         item.equipped = false;
                         newItem.buttonText.text = "Equip";
                     };
-                    
+
                 }
             }));
         }
@@ -105,7 +113,7 @@ public class Shop : MonoBehaviour
     public bool BuyItem(string name)
     {
         int price = GetItemPrice(name);
-        if (coinSO.Value > price)
+        if (coinSO.Value >= price)
         {
             coinSO.Value -= price;
             SetItemOwned(name);
