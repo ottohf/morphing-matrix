@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Playground.unity
     guid: e0e97b14f7ffc4473bf77a1c1eb92627
   - enabled: 1
-    path: Assets/Scenes/Tutorial.unity
+    path: Assets/Scenes/Level 1.unity
     guid: f0c2585bfa4d45471b05d798ec91cef7
   - enabled: 1
     path: Assets/Scenes/Level 2.unity
@@ -26,5 +26,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Shop.unity
     guid: 16e4c968e75dc587f924c496de89ed6c
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 39481ce09ee31542496a1bdbf8e3c5ef
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

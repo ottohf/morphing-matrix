@@ -10,8 +10,16 @@ public class PhoneButton : MonoBehaviour, IPointerDownHandler
 {
     public UnityEvent onButtonDown;
 
+    Button button;
+
+    void Awake()
+    {
+        button = GetComponent<Button>();
+    }
+
     public void OnPointerDown(PointerEventData eventData)
     {
-        onButtonDown.Invoke();
+        if (button.interactable)
+            onButtonDown.Invoke();
     }
 }

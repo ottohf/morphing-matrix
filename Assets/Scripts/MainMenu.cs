@@ -18,6 +18,16 @@ public class MainMenu : MonoBehaviour
         SoundManager.instance.bgm.clip = SoundManager.instance.levelBGM;
         SoundManager.instance.bgm.Play();
 
+        SceneManager.LoadScene("Level 1");
+    }
+
+    public void OnGotoTutorial()
+    {
+        SoundManager.instance.PlayButtonSound();
+
+        SoundManager.instance.bgm.clip = SoundManager.instance.levelBGM;
+        SoundManager.instance.bgm.Play();
+
         SceneManager.LoadScene("Tutorial");
     }
 
